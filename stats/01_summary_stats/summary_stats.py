@@ -50,6 +50,36 @@ def median(lst):
 
         return (higher_mid + lower_mid) / 2
 
-print(median(lst1))
-print(median(lst2))
+# print(median(lst1))
+# print(median(lst2))
     
+
+urban = 6.0, 5.0, 11.0, 33.0, 4.0, 5.0, 80.0, 18.0, 35.0, 17.0, 23.0
+farmhouse = 4.0, 14.0, 11.0, 9.0, 9.0, 8.0, 4.0, 20.0, 5.0, 8.9, 21.0, 9.2, 3.0, 2.0
+
+
+# print(median(urban))
+# print(median(farmhouse))
+
+
+# house_values = [500000, 125000, 36000, 70000, 650000, 3400000, 560000]
+
+# print(sorted(house_values))
+# print('mean ', mean(house_values) )
+# print('median ', median(house_values) )
+
+
+''' Mode '''
+
+def mode(lst):
+    most_occurring = lst[0]
+
+    for item in lst[1:]:
+        if lst.count(item) > lst.count(most_occurring):
+            most_occurring = item
+
+    return most_occurring
+
+mode_lst = ['cat', 'dog', 'bear', 'bear', 'bear', 'bear', 'bear', 'cat', 'cat', 'cat', 'cat', 'cat', 'dog']
+
+# print(mode(mode_lst))
