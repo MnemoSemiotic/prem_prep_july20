@@ -83,3 +83,20 @@ def mode(lst):
 mode_lst = ['cat', 'dog', 'bear', 'bear', 'bear', 'bear', 'bear', 'cat', 'cat', 'cat', 'cat', 'cat', 'dog']
 
 # print(mode(mode_lst))
+
+
+
+''' Five Number Summary, IQR, Qualifying Outliers '''
+def five_number_summary(lst):
+    min_ = min(lst)
+    max_ = max(lst)
+    med = median(lst)
+
+    q1 = median(sorted(lst)[0:int(len(lst)/2)])
+    q3 = median(sorted(lst)[int(len(lst)/2):])
+
+    return min_, q1, med, q3, max_
+
+house_values = [500000, 125000, 36000, 70000, 650000, 3400000, 560000]
+
+print(five_number_summary(house_values))
