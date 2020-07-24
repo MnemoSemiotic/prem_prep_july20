@@ -97,6 +97,27 @@ def five_number_summary(lst):
 
     return min_, q1, med, q3, max_
 
-house_values = [500000, 125000, 36000, 70000, 650000, 3400000, 560000]
+house_values = [-6000000, 450000, 652234, 89000, 750000, 224968, 500000, 125000, 36000, 70000, 650000, 3400000, 560000]
 
-print(five_number_summary(house_values))
+# print(five_number_summary(house_values))
+
+def iqr(lst):
+    _, q1, _, q3, _ = five_number_summary(lst)
+    return q3 - q1
+
+# print(iqr(house_values))
+
+def detect_outliers(lst):
+    _, q1, _, q3, _ = five_number_summary(lst)
+    iqr_ = iqr(lst)
+
+    outliers = []
+
+    for item in lst:
+        if item < q1 - 1.5*iqr_:
+            outliers.append(item)
+        if item > q3 + 1.5*iqr_:
+            outliers.append(item)
+    return outliers
+
+print(detect_outliers(house_values))
