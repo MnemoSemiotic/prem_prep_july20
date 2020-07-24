@@ -123,7 +123,10 @@ def detect_outliers(lst):
 # print(detect_outliers(house_values))
 
 a = [590, 615, 575, 608, 350, 1285, 408, 540, 555, 679]
+a_trimmed = list(set(a) - set(detect_outliers(a)))
 
-print(five_number_summary(a))
-print(iqr(a))
-print(detect_outliers(a))
+# print(five_number_summary(a))
+# print(iqr(a))
+# print(detect_outliers(a))
+print(five_number_summary(a_trimmed))
+print(mean(a_trimmed))
