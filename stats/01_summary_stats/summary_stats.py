@@ -54,8 +54,8 @@ def median(lst):
 # print(median(lst2))
     
 
-urban = 6.0, 5.0, 11.0, 33.0, 4.0, 5.0, 80.0, 18.0, 35.0, 17.0, 23.0
-farmhouse = 4.0, 14.0, 11.0, 9.0, 9.0, 8.0, 4.0, 20.0, 5.0, 8.9, 21.0, 9.2, 3.0, 2.0
+urban = [6.0, 5.0, 11.0, 33.0, 4.0, 5.0, 80.0, 18.0, 35.0, 17.0, 23.0]
+farmhouse = [4.0, 14.0, 11.0, 9.0, 9.0, 8.0, 4.0, 20.0, 5.0, 8.9, 21.0, 9.2, 3.0, 2.0]
 
 
 # print(median(urban))
@@ -125,8 +125,10 @@ def detect_outliers(lst):
 a = [590, 615, 575, 608, 350, 1285, 408, 540, 555, 679]
 a_trimmed = list(set(a) - set(detect_outliers(a)))
 
+# print(a)
+# print(a_trimmed)
 # print(five_number_summary(a))
 # print(iqr(a))
 # print(detect_outliers(a))
-print(five_number_summary(a_trimmed))
-print(mean(a_trimmed))
+# print(five_number_summary(a_trimmed))
+# print(mean(a_trimmed))
