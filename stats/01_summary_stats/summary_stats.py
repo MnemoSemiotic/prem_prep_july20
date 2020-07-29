@@ -162,10 +162,23 @@ def variance(lst, sample=True):
         return total / (len(lst) - 1)
     else:
         return total / len(lst)
+a = [1, 2, 5, 6, 7, 9, 12, 15, 18, 19, 27]
 
-a_var_pop = variance([1, 2, 5, 6, 7, 9, 12, 15, 18, 19, 27], sample=False)
-a_var_samp = variance([1, 2, 5, 6, 7, 9, 12, 15, 18, 19, 27], sample=True)
+a_var_pop = variance(a, sample=False)
+a_var_samp = variance(a, sample=True)
 
-
+print(sorted(a))
 print(a_var_pop)
 print(a_var_samp)
+
+''' standard deviation '''
+
+def stdev(lst, sample=True):
+    return variance(lst, sample)**(1/2)
+
+a_sd_pop = stdev(a, sample=False)
+a_sd_samp = stdev(a, sample=True)
+
+
+print(a_sd_pop)
+print(a_sd_samp)
