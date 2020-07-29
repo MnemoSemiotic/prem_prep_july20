@@ -132,3 +132,39 @@ a_trimmed = list(set(a) - set(detect_outliers(a)))
 # print(detect_outliers(a))
 # print(five_number_summary(a_trimmed))
 # print(mean(a_trimmed))
+
+
+''' Breakout '''
+
+# a = [18, 15, 7, 27, 2, 9, 12, 1, 6, 19, 5]
+
+# print(five_number_summary(a))
+
+# print(iqr(a))
+
+# print(detect_outliers(a))
+
+# print(sorted(a))
+# print(mean(a))
+# print(median(a))
+
+
+''' Variance '''
+
+def variance(lst, sample=True):
+    total = 0
+    mean_ = mean(lst)
+
+    for item in lst:
+        total += (item - mean_)**2
+
+    if sample:
+        return total / (len(lst) - 1)
+    else:
+        return total / len(lst)
+
+a_var_pop = variance([1, 2, 5, 6, 7, 9, 12, 15, 18, 19, 27], sample=False)
+a_var_samp = variance([1, 2, 5, 6, 7, 9, 12, 15, 18, 19, 27], sample=True)
+
+print(a_var_pop)
+print(a_var_samp)
