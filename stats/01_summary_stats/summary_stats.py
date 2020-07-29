@@ -166,5 +166,6 @@ def variance(lst, sample=True):
 a_var_pop = variance([1, 2, 5, 6, 7, 9, 12, 15, 18, 19, 27], sample=False)
 a_var_samp = variance([1, 2, 5, 6, 7, 9, 12, 15, 18, 19, 27], sample=True)
 
+
 print(a_var_pop)
 print(a_var_samp)
