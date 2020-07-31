@@ -185,5 +185,34 @@ def difference(set1, set2):
             set_diff.append(item)
     return set_diff
 
-print(difference(list1, list2))
-print(difference(list2, list1))
+# print(difference(list1, list2))
+# print(difference(list2, list1))
+
+
+''' breakout slide 17 '''
+sample_space = []
+
+for roll1 in range(1, 6+1):
+    for roll2 in range(1, 6+1):
+        sample_space.append([roll1, roll2])
+
+for outcome in sample_space:
+    print(outcome)
+
+A, B = [], []
+
+for outcome in sample_space:
+    if sum(outcome) >= 10:
+        A.append(outcome)
+    if sum(outcome) % 2 == 0:
+        B.append(outcome)
+print('A')
+for outcome in A:
+    print(outcome)
+print()
+print('B')
+for outcome in B:
+    print(outcome)
+
+print(difference(A, B))
+print(difference(B, A))
