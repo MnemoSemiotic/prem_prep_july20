@@ -173,5 +173,17 @@ for outcome in sample_space:
 # for outcome in intersection(A, complement(sample_space, C)):
 #     print(outcome)
 
-for outcome in complement(sample_space, intersection(A, C)):
-    print(outcome)
+# for outcome in complement(sample_space, intersection(A, C)):
+#     print(outcome)
+
+
+''' Set Difference '''
+def difference(set1, set2):
+    set_diff = []
+    for item in set1:
+        if item not in set2:
+            set_diff.append(item)
+    return set_diff
+
+print(difference(list1, list2))
+print(difference(list2, list1))
