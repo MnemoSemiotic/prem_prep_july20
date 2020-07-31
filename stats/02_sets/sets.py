@@ -129,4 +129,49 @@ def complement(samp_space, set_):
             comp.append(item)
     return comp
 
-print(complement(sample_space, list3))
+# print(complement(sample_space, list3))
+
+
+''' Breakout Slide 13 '''
+coin_flips = ['H', 'T']
+
+sample_space = []
+
+for flip1 in coin_flips:
+    for flip2 in coin_flips:
+        for flip3 in coin_flips:
+            for flip4 in coin_flips:
+                sample_space.append([flip1, flip2, flip3, flip4])
+
+# for samp in sample_space:
+#     print(samp)
+
+A, B, C = [], [], []
+
+for outcome in sample_space:
+    if outcome.count('H') >= 3:
+        A.append(outcome)
+    if outcome.count('T') <= 2:
+        B.append(outcome)
+    if outcome.count('H') == 4 or outcome.count('T') == 4:
+        C.append(outcome)
+
+# print('A')
+# for outcome in A:
+#     print(outcome)
+
+# print()
+# print('B')
+# for outcome in B:
+#     print(outcome)
+
+# print()
+# print('C')
+# for outcome in C:
+#     print(outcome)
+
+# for outcome in intersection(A, complement(sample_space, C)):
+#     print(outcome)
+
+for outcome in complement(sample_space, intersection(A, C)):
+    print(outcome)
