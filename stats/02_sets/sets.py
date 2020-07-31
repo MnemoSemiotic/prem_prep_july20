@@ -84,6 +84,35 @@ for outcome in samp_space:
 
 # print(B)
 
-print(union(A, B))
+# print(union(A, B))
 
 
+''' Intersection '''
+def intersection(set1, set2):
+    set_intersect = []
+
+    for item in set1:
+        if item in set2:
+            set_intersect.append(item)
+    return set_intersect
+
+# print(intersection(list1, list2))
+
+def intersection_mult(*args):
+    set_intersect = []
+
+    if len(args) > 0:
+        for item in args[0]:
+            flag = True
+            for set_ in args:
+                if item not in set_:
+                    flag = False
+            if flag == True:
+                set_intersect.append(item)
+
+        return set_intersect
+    else:
+        return set_intersect
+
+print(intersection_mult())
+print(intersection_mult(list1, list2, list3))
