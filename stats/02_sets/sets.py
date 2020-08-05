@@ -190,29 +190,29 @@ def difference(set1, set2):
 
 
 ''' breakout slide 17 '''
-sample_space = []
+# sample_space = []
 
-for roll1 in range(1, 6+1):
-    for roll2 in range(1, 6+1):
-        sample_space.append([roll1, roll2])
+# for roll1 in range(1, 6+1):
+#     for roll2 in range(1, 6+1):
+#         sample_space.append([roll1, roll2])
 
-for outcome in sample_space:
-    print(outcome)
+# for outcome in sample_space:
+#     print(outcome)
 
-A, B = [], []
+# A, B = [], []
 
-for outcome in sample_space:
-    if sum(outcome) >= 10:
-        A.append(outcome)
-    if sum(outcome) % 2 == 0:
-        B.append(outcome)
-print('A')
-for outcome in A:
-    print(outcome)
-print()
-print('B')
-for outcome in B:
-    print(outcome)
+# for outcome in sample_space:
+#     if sum(outcome) >= 10:
+#         A.append(outcome)
+#     if sum(outcome) % 2 == 0:
+#         B.append(outcome)
+# print('A')
+# for outcome in A:
+#     print(outcome)
+# print()
+# print('B')
+# for outcome in B:
+#     print(outcome)
 
-print(difference(A, B))
-print(difference(B, A))
+# print(difference(A, B))
+# print(difference(B, A))
