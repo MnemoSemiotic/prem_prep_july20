@@ -160,16 +160,52 @@ def build_permutations(vals=[0,1,2,3,4], exp_len=5):
     return sorted(permutations), draws
 
 
-# perms = build_permutations(['elephant', 'hippo', 'jellyfish', 'squid', 'pill bug'], exp_len=3)
+perms = build_permutations(['elephant', 'hippo', 'jellyfish', 'squid', 'pill bug'], exp_len=3)
 
 # for perm in perms[0]:
 #     print(perm)
 
-# print(f'number of permutations: {len(perms[0])}')
-# print(f'took {perms[1]} draws')
+print(f'number of permutations: {len(perms[0])}')
+print(f'took {perms[1]} draws')
 
 
 
 '''
 combinations
 '''
+
+def get_combination(vals=list(range(1,21)), length=3):
+    output = []
+
+    for _ in range(1000):
+        if len(output) == length:
+            break
+
+        num = choice(vals)
+
+        if num not in output:
+            output.append(num)
+
+    return sorted(output)
+
+def build_combinations(vals=list(range(1,21)), length=3):
+    draws = 0
+
+    combinations = []
+
+    while len(combinations) < int(comb(len(vals), length)):
+        arrang = get_combination(vals, length)
+        draws += 1
+
+        if arrang not in combinations:
+            combinations.append(arrang)
+
+    return combinations, draws
+
+combs, draws = build_combinations(['elephant', 'hippo', 'jellyfish', 'squid', 'pill bug'], length=3)
+
+# for comb in combs:
+#     print(comb)
+
+print(f'number of combinations: {len(combs)}')
+print(f'took {draws} draws')
