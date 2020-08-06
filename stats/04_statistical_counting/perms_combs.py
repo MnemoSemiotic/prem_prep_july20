@@ -39,3 +39,37 @@ def factorial(num):
 
 # print(factorial(52))
 
+
+
+'''
+Given a race in which there are 30 numbered runners to choose from, and 5 runners will get the top 5 positions, how many possible outcomes are there, assuming that the order in which the runners finish does matter?
+'''
+
+def perm(n, k):
+    return int(factorial(n) / factorial(n-k))
+
+# print(perm(30, 5))
+
+
+
+def permutations_nP3(base=5):
+    base_list = []
+
+    for i in range(base):
+        for j in range(base):
+            for k in range(base):
+                base_list.append([i, j, k])
+
+    permutations = []
+
+    for arrangement in base_list:
+        if len(list(set(arrangement))) == 3:
+            permutations.append(arrangement)
+
+    return permutations
+
+perms = permutations_nP3(base=5)
+# for p in perms:
+#     print(p)
+# print(len(perms))
+# print(perm(n=5, k=3))
