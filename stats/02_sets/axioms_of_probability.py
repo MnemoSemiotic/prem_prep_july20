@@ -7,7 +7,7 @@ setC = set(['bear', 'whale', 'sea cucumber', 'mink', 'eagle', 'dog'])
 
 sample_space = setA.union(setB).union(setC)
 # print(sample_space)
-print(len(setA) / len(sample_space))
+# print(len(setA) / len(sample_space))
 
 
 '''
@@ -120,3 +120,6 @@ DeMorgan’s Laws
 '''
 # print((not (a or b)) == (not a) and (not b))
 # print(not (a and b) == (not a) or (not b))
+
+
+
