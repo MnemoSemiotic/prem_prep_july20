@@ -73,3 +73,103 @@ perms = permutations_nP3(base=5)
 #     print(p)
 # print(len(perms))
 # print(perm(n=5, k=3))
+
+
+''' 20C3 Out of a set of 20 basketball players you can only have 5 on the court at a time. How many combinations are there of your basketball team? '''
+
+''' combinations '''
+def comb(n, k): 
+    return int(factorial(n) / (factorial(n-k) * factorial(k)))
+
+# print(comb(21, 5))
+
+
+def combinations_intuition():
+    twentyone_nums = list(range(1, 21+1))
+
+    # find every arrangement of 5
+    possible_3 = []
+
+    for i in twentyone_nums:
+        for j in twentyone_nums:
+            for k in twentyone_nums:
+                possible_3.append([i,j,k])
+
+    permutations = []
+
+    for three in possible_3:
+        if len(list(set(three))) == 3:
+            permutations.append(three)
+
+    combinations = []
+
+    for three in permutations:
+        sorted_three= sorted(three)
+        if sorted_three not in combinations:
+            combinations.append(sorted_three)
+        
+    return combinations
+
+# break_at = 30
+# for comb in combinations_intuition():
+#     print(comb)
+#     break_at -= 1
+#     if break_at < 0:
+#         break
+
+
+'''
+Sampling approach to perms and combs
+'''
+from random import choice
+
+
+'''
+permutations
+'''
+
+def get_permutation(vals=[0,1,2,3,4], length=5):
+    output = []
+
+    for i in range(1000):
+        if len(output) == length:
+            # print(f'    took {i} iterations')
+            break
+
+        val = choice(vals)
+
+        if val not in output:
+            output.append(val)
+
+    return output
+
+# print(get_permutation(vals=['dog', 'cat', 'bunny'], length=2))
+
+def build_permutations(vals=[0,1,2,3,4], exp_len=5):
+    draws = 0
+
+    permutations = []
+
+    while len(permutations) < int(perm(len(vals), exp_len)):
+        arrang = get_permutation(vals, exp_len)
+        draws += 1
+
+        if arrang not in permutations:
+            permutations.append(arrang)
+
+    return sorted(permutations), draws
+
+
+# perms = build_permutations(['elephant', 'hippo', 'jellyfish', 'squid', 'pill bug'], exp_len=3)
+
+# for perm in perms[0]:
+#     print(perm)
+
+# print(f'number of permutations: {len(perms[0])}')
+# print(f'took {perms[1]} draws')
+
+
+
+'''
+combinations
+'''
