@@ -58,3 +58,24 @@ def get_binary(n_bits=8):
 # for dec, bin_ in get_binary().items():
 #     print(f'{dec}: {bin_}')
 
+
+def binomial_distr(binary_dict):
+    binomial_dict = dict()
+
+    for _, val in binary_dict.items():
+        sum_ = sum(val)
+        if sum_ not in binomial_dict:
+            binomial_dict[sum_] = 0
+        binomial_dict[sum_] += 1
+    
+    return binomial_dict
+
+d = get_binary(n_bits=12)
+
+binomial_dict = binomial_distr(d)
+
+# for k, v in binomial_dict.items():
+#     print(f'{k}: {v}')
+
+for k, v in binomial_dict.items():
+    print(f'{k}: {v / len(d.values())}')
