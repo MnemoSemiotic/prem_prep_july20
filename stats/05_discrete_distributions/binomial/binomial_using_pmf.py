@@ -5,3 +5,6 @@ def factorial(n):
         prod *= num
     return prod
 
+def combinations(n, k):
+    return int(factorial(n) / (factorial(n-k) * factorial(k)))
+
