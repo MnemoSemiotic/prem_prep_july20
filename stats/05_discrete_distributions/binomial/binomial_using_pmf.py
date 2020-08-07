@@ -36,4 +36,6 @@ def binomial_dict(n, k_low, k_high, p=0.5):
 #     print(f'{k}: {v}')
 
 
+'''There are 8 components in parallel and at least 3 of those components need to be operational for a circuit to function. The probability of any given component being operational is 0.7. What is the probability that 3 components are operational?'''
+
 
