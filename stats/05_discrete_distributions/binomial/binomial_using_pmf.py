@@ -41,4 +41,15 @@ def binomial_dict(n, k_low, k_high, p=0.5):
 
 # print(binomial_pmf(8, 3, p=0.7))
 
+
 '''What is the probability that at least 3 components are operational?'''
+
+# P(X = 3) + P(X = 4) ... P(X = 8)
+# print(binomial_pmf(8, 3, p=0.7)+binomial_pmf(8, 4, p=0.7)+binomial_pmf(8, 5, p=0.7)+binomial_pmf(8, 6, p=0.7)+binomial_pmf(8, 7, p=0.7)+binomial_pmf(8, 8, p=0.7))
+
+# print(1 - (binomial_pmf(8, 2, p=0.7)+binomial_pmf(8, 1, p=0.7+binomial_pmf(8, 0, p=0.7))))
+
+# print(1 - binomial_cdf(8, 2, p=0.7))
+
+for k, v in binomial_dict(8, 0, 8, p=0.7).items():
+    print(f'{k}: {v}')
