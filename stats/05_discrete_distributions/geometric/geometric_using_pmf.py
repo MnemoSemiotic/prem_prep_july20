@@ -41,3 +41,17 @@ def geom_cdf_closed(p, k, inclusive=True):
         return 1 - (1-p)**k
     else:
         return 1 - (1-p)**(k+1)
+
+
+def geom_cdf_accum(p, k, inclusive=True):
+    proba_ = 0
+
+    if inclusive:
+        starting_at = 1
+    else:
+        starting_at = 0
+
+    for r in range(starting_at, k+1):
+        proba_ += geometric_pmf(p, r, inclusive=inclusive)
+
+    return proba_
