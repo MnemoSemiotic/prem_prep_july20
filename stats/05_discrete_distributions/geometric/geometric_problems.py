@@ -41,3 +41,7 @@ Differentiating Binomial, Poisson, and Geometric
 
 # Geometric
 # The proba of some binary event is p. What is the probability of having your first success on the nth trial.
+
+# for some more review:
+#   https://www.statlect.com/probability-distributions/
+#   https://www.jbstatistics.com/
