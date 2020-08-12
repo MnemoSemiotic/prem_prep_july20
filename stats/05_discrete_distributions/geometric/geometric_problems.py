@@ -33,3 +33,11 @@ Given that there is a drought, what is the probability that the drought lasts at
 '''
 Differentiating Binomial, Poisson, and Geometric
 '''
+# Binomial
+# What is the proba that some number out of some number is successful?
+
+# Poisson
+# On average, some number of events happens in this volume (of time, space, etc). What is the proba that some other number of events happens in some volume?
+
+# Geometric
+# The proba of some binary event is p. What is the probability of having your first success on the nth trial.
