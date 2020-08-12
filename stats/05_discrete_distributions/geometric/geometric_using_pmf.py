@@ -55,3 +55,12 @@ def geom_cdf_accum(p, k, inclusive=True):
         proba_ += geometric_pmf(p, r, inclusive=inclusive)
 
     return proba_
+
+'''
+You are flipping a fair coin. What is the probability that you will need to flip the coin less than 7 times before getting a heads?
+'''
+
+print(geom_cdf_closed(p=0.5, k=7, inclusive=True))  # 0.9921875
+print(geom_cdf_closed(p=0.5, k=6, inclusive=False)) # 0.9921875
+print(geom_cdf_accum(p=0.5, k=7, inclusive=True)) # 0.9921875
+print(geom_cdf_accum(p=0.5, k=6, inclusive=False)) # 0.9921875
