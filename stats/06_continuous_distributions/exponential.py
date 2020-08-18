@@ -13,3 +13,6 @@ def exponential_mean(lmbda):
 
 def exponential_variance(lmbda):
     return 1 / lmbda**2
+
+def exponential_std(lmbda):
+    return (1 / lmbda**2)**(1/2)
