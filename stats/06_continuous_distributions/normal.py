@@ -16,4 +16,6 @@ def normal_cdf(x, mu, sigma):
     return accum*0.001
 
 
-print(1 - normal_cdf(100, 90, 10))
+# print(1 - normal_cdf(100, 90, 10))
+
+print(normal_cdf(70, 50, 15) - normal_cdf(50, 50, 15))
