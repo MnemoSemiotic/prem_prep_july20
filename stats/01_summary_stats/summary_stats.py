@@ -87,15 +87,32 @@ mode_lst = ['cat', 'dog', 'bear', 'bear', 'bear', 'bear', 'bear', 'cat', 'cat', 
 
 
 ''' Five Number Summary, IQR, Qualifying Outliers '''
-def five_number_summary(lst):
+def five_num_summary(lst):
     min_ = min(lst)
     max_ = max(lst)
     med = median(lst)
 
-    q1 = median(sorted(lst)[0:int(len(lst)/2)])
-    q3 = median(sorted(lst)[int(len(lst)/2):])
+    if len(lst) % 2 == 1:
+        move_mid_idx_by = 1
+    else:
+        move_mid_idx_by = 0
+
+    sorted_lst = sorted(lst)
+    lst_low = sorted(lst)[0:int(len(lst)/2)]
+    q1 = median(lst_low)
+
+    lst_high = sorted(lst)[int(len(lst)/2)+move_mid_idx_by: ]
+    q3 = median(lst_high)
+
+    print(f'list low: {lst_low}')
+    print(f'list high: {lst_high}')
 
     return min_, q1, med, q3, max_
+
+b = [6,1,4,51,7,16,10,14,46,22,24,56,48,54]
+a = [15,2,9,5,6,7,27,12,18,19,1]
+
+print(five_num_summary(b))
 
 house_values = [-6000000, 450000, 652234, 89000, 750000, 224968, 500000, 125000, 36000, 70000, 650000, 3400000, 560000]
 
